@@ -28,9 +28,8 @@ prime_ary = [x for x in range(n+1) if chk[x]]
 for num in ary:
   count = 0
   for i in prime_ary:
-    for j in prime_ary:
-      if(num == i+j):
-        count += 1
-  if count > 1:
-    count = round(count/2)
+      if i > num // 2:
+          break
+      if chk[num - i]:
+          count += 1
   print(count)
